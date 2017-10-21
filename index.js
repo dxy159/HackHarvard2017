@@ -56,7 +56,7 @@ app.post('/webhook/', function (req, res) {
 		    	sendTextMessage(sender, "I will come back later")
 		    	continue
 		    } else {
-		    	sendTextMessage(sender, sender.id)
+		    	sendTextMessage(sender, sender)
 		    	continue
 		    }
 	    }

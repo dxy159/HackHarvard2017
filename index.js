@@ -44,14 +44,19 @@ app.post('/webhook/', function (req, res) {
         	}
 		    if (text === "doorbell") {
 		    	quickReply(sender, "someone's at the door")
+		    	continue
 		    } else if (text === "soon") {
 		    	sendTextMessage(sender, "ok")
+		    	continue
 		    } else if (text === "bye") {
 		    	sendTextMessage(sender, "bye")
+		    	continue
 		    }  else if (text === "away") {
 		    	sendTextMessage(sender, "I will come back later")
+		    	continue
 		    } else {
 		    	sendTextMessage(sender, "say doorbell")
+		    	continue
 		    }
 	    }
     }

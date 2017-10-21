@@ -37,11 +37,11 @@ app.post('/webhook/', function (req, res) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
-	    	if (event.message.quick_reply) {
+		    let text = event.message.text
+		    if (event.message.quick_reply) {
 	    		var status = JSON.stringify(event.message.quick_reply.payload)
 	    		text = status
 	    	}
-		    let text = event.message.text
 		    if (text === "doorbell") {
 		    	quickReply(sender, "someone's at the door")
 		    } else if (text === "soon") {
@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-const token = "EAAB4mW4xXvMBALWM1wNbWDhkyoI5RWgZAYjgZBAsIZA1q8QUNzWJPUqrbwlDy6hpR4lompGeOnoJrUWMlvEYVDvZBeEnlLlZCJqx3Ur1208hXe19nd5lDK5C11jWtPCn6zCj8ZBrsFaMztlZAMft2olUg5xPcCGCKDSweY4EO9MHRN0TZBvvyqZB5"
+const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlqtgwka8R4yXMNDFslQIqGW5t4E1ivqqFGCQ5uAWkk5dpIQ1sUju0GV5kQmBTFGM8lA3BeSRHzWFYt6WpWnJVKzS0Vk4EY9A6WmzXhFt52Jma9LytZCeD"
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }

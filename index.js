@@ -38,7 +38,7 @@ app.post('/webhook/', function (req, res) {
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
 		    let text = event.message.text
-		    sendTextMessage(sender, "yilin is the englishest name")
+		    sendTextMessage(sender, "yilin is the englusheshtsesht name")
 	    }
     }
     res.sendStatus(200)
@@ -53,7 +53,7 @@ function sendTextMessage(sender, text) {
 	    qs: {access_token:token},
 	    method: 'POST',
 		json: {
-		    recipient: {id:sender},''
+		    recipient: {id:sender},
 			message: messageData,
 		}
 	}, function(error, response, body) {

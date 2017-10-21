@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F60E593406918881E8A618525BDD84016B6E58A2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "960099CAFDC355A7330BC40DA9BB18337A1EAA60" : 9223372036854775807,
+    "F60E593406918881E8A618525BDD84016B6E58A2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D01A9FFB-0411-478D-8037-FB96F7BFA330",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "960099CAFDC355A7330BC40DA9BB18337A1EAA60" : "hksn-landing\/",
+    "F60E593406918881E8A618525BDD84016B6E58A2" : "HackHarvard2017\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WhatTheBell",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WhatTheBell\/WhatTheBell.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/michaelchum\/hksn-landing.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "960099CAFDC355A7330BC40DA9BB18337A1EAA60"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dxy159\/HackHarvard2017.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F60E593406918881E8A618525BDD84016B6E58A2"
+    }
+  ]
+}

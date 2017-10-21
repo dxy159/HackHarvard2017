@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19ECAF0B1F9B0AB900A96286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ECAF0A1F9B0AB900A96286 /* AppDelegate.swift */; };
+		19ECAF0D1F9B0AB900A96286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ECAF0C1F9B0AB900A96286 /* ViewController.swift */; };
+		19ECAF101F9B0AB900A96286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ECAF0E1F9B0AB900A96286 /* Main.storyboard */; };
+		19ECAF121F9B0AB900A96286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19ECAF111F9B0AB900A96286 /* Assets.xcassets */; };
+		19ECAF151F9B0AB900A96286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19ECAF131F9B0AB900A96286 /* LaunchScreen.storyboard */; };
+		19ECAF1D1F9B0C7B00A96286 /* doorbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ECAF1C1F9B0C7B00A96286 /* doorbell.png */; };
+		19ECAF1F1F9B103400A96286 /* whatthebell.png in Resources */ = {isa = PBXBuildFile; fileRef = 19ECAF1E1F9B103400A96286 /* whatthebell.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19ECAF071F9B0AB900A96286 /* WhatTheBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19ECAF0A1F9B0AB900A96286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19ECAF0C1F9B0AB900A96286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19ECAF0F1F9B0AB900A96286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19ECAF111F9B0AB900A96286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19ECAF141F9B0AB900A96286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19ECAF161F9B0AB900A96286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19ECAF1C1F9B0C7B00A96286 /* doorbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doorbell.png; path = "../../../hksn-landing/events/doorbell.png"; sourceTree = "<group>"; };
+		19ECAF1E1F9B103400A96286 /* whatthebell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whatthebell.png; path = "../../../hksn-landing/events/whatthebell.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19ECAF041F9B0AB900A96286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19ECAEFE1F9B0AB900A96286 = {
+			isa = PBXGroup;
+			children = (
+				19ECAF091F9B0AB900A96286 /* WhatTheBell */,
+				19ECAF081F9B0AB900A96286 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19ECAF081F9B0AB900A96286 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19ECAF071F9B0AB900A96286 /* WhatTheBell.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19ECAF091F9B0AB900A96286 /* WhatTheBell */ = {
+			isa = PBXGroup;
+			children = (
+				19ECAF0A1F9B0AB900A96286 /* AppDelegate.swift */,
+				19ECAF0C1F9B0AB900A96286 /* ViewController.swift */,
+				19ECAF0E1F9B0AB900A96286 /* Main.storyboard */,
+				19ECAF1E1F9B103400A96286 /* whatthebell.png */,
+				19ECAF1C1F9B0C7B00A96286 /* doorbell.png */,
+				19ECAF111F9B0AB900A96286 /* Assets.xcassets */,
+				19ECAF131F9B0AB900A96286 /* LaunchScreen.storyboard */,
+				19ECAF161F9B0AB900A96286 /* Info.plist */,
+			);
+			path = WhatTheBell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19ECAF061F9B0AB900A96286 /* WhatTheBell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19ECAF191F9B0AB900A96286 /* Build configuration list for PBXNativeTarget "WhatTheBell" */;
+			buildPhases = (
+				19ECAF031F9B0AB900A96286 /* Sources */,
+				19ECAF041F9B0AB900A96286 /* Frameworks */,
+				19ECAF051F9B0AB900A96286 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatTheBell;
+			productName = WhatTheBell;
+			productReference = 19ECAF071F9B0AB900A96286 /* WhatTheBell.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19ECAEFF1F9B0AB900A96286 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Richard Ni";
+				TargetAttributes = {
+					19ECAF061F9B0AB900A96286 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7LF67W8UGM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 19ECAF021F9B0AB900A96286 /* Build configuration list for PBXProject "WhatTheBell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19ECAEFE1F9B0AB900A96286;
+			productRefGroup = 19ECAF081F9B0AB900A96286 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19ECAF061F9B0AB900A96286 /* WhatTheBell */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19ECAF051F9B0AB900A96286 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19ECAF1F1F9B103400A96286 /* whatthebell.png in Resources */,
+				19ECAF151F9B0AB900A96286 /* LaunchScreen.storyboard in Resources */,
+				19ECAF121F9B0AB900A96286 /* Assets.xcassets in Resources */,
+				19ECAF1D1F9B0C7B00A96286 /* doorbell.png in Resources */,
+				19ECAF101F9B0AB900A96286 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19ECAF031F9B0AB900A96286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19ECAF0D1F9B0AB900A96286 /* ViewController.swift in Sources */,
+				19ECAF0B1F9B0AB900A96286 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		19ECAF0E1F9B0AB900A96286 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19ECAF0F1F9B0AB900A96286 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		19ECAF131F9B0AB900A96286 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19ECAF141F9B0AB900A96286 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19ECAF171F9B0AB900A96286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19ECAF181F9B0AB900A96286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19ECAF1A1F9B0AB900A96286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7LF67W8UGM;
+				INFOPLIST_FILE = WhatTheBell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.richard.ni.dxy159.WhatTheBell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		19ECAF1B1F9B0AB900A96286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7LF67W8UGM;
+				INFOPLIST_FILE = WhatTheBell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.richard.ni.dxy159.WhatTheBell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19ECAF021F9B0AB900A96286 /* Build configuration list for PBXProject "WhatTheBell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19ECAF171F9B0AB900A96286 /* Debug */,
+				19ECAF181F9B0AB900A96286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19ECAF191F9B0AB900A96286 /* Build configuration list for PBXNativeTarget "WhatTheBell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19ECAF1A1F9B0AB900A96286 /* Debug */,
+				19ECAF1B1F9B0AB900A96286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19ECAEFF1F9B0AB900A96286 /* Project object */;
+}

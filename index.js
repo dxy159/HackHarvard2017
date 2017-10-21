@@ -39,9 +39,9 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text) {
 		    let text = event.message.text
 		    if (event.message.quick_reply) {
-	    		var status = JSON.stringify(event.message.quick_reply.payload)
-	    		text = status
-	    	}
+            	var status = JSON.stringify(event.message.quick_reply.payload)
+            	text = status
+        	}
 		    if (text === "doorbell") {
 		    	quickReply(sender, "someone's at the door")
 		    } else if (text === "soon") {

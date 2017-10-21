@@ -40,6 +40,12 @@ app.post('/webhook/', function (req, res) {
 		    let text = event.message.text
 		    if (text === "doorbell") {
 		    	quickReply(sender, "someone's at the door")
+		    } else if (text === "soon") {
+		    	sendTextMessage(sender, "ok")
+		    } else if (text === "bye") {
+		    	sendTextMessage(sender, "bye")
+		    }  else if (text === "away") {
+		    	sendTextMessage(sender, "I will come back later")
 		    } else {
 		    	sendTextMessage(sender, "say doorbell")
 		    }

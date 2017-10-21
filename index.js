@@ -38,7 +38,11 @@ app.post('/webhook/', function (req, res) {
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
 		    let text = event.message.text
-		    sendTextMessage(sender, "wow")
+		    if (text === "doorbell") {
+		    	quickReply(sender, "someone's at the door")
+		    } else {
+		    	sendTextMessage(sender, "say doorbell")
+		    }
 	    }
     }
     res.sendStatus(200)
@@ -49,6 +53,44 @@ const token = "EAAB4mW4xXvMBALWM1wNbWDhkyoI5RWgZAYjgZBAsIZA1q8QUNzWJPUqrbwlDy6hp
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
     request({
+	    url: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: {access_token:token},
+	    method: 'POST',
+		json: {
+		    recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+		    console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+		    console.log('Error: ', response.body.error)
+	    }
+    })
+}
+
+function quickReply(sender, text) {
+	let messageData = {
+		"text":text,
+		"quick_replies":[
+			{
+				"content_type":"text",
+				"title":"I'll be there soon",
+				"payload":"soon"
+			},
+			{
+				"content_type":"text",
+				"title":"GTFO",
+				"payload":"bye"
+			},
+			{
+				"content_type":"text",
+				"title":"I'm not home atm",
+				"payload":"away"
+			}
+		]
+	}
+	request({
 	    url: 'https://graph.facebook.com/v2.6/me/messages',
 	    qs: {access_token:token},
 	    method: 'POST',

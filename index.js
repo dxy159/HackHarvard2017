@@ -1,13 +1,12 @@
-// Twilio Credentials
-const accountSid = 'AC6b9df5ceb8e340c7619de143c49016fe';
-const authToken = '13828da7ff19fba2a8797e49c1cbf810';
-const client = require('twilio')(accountSid, authToken);
+'use strict'
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
+
 // Process application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
 
@@ -16,22 +15,109 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('Hello world, I am a chat bot')
+	res.send('Hello world, I am a chat bot')
 })
 
-app.post('/', function (req, res) {
-	console.log(req.body)
+// for Facebook verification
+app.get('/webhook/', function (req, res) {
+	if (req.query['hub.verify_token'] === 'YILINISANENGLISHNAME') {
+		res.send(req.query['hub.challenge'])
+	}
+	res.send('Error, wrong token')
 })
 
 // Spin up the server
 app.listen(app.get('port'), function() {
-    console.log('running on port', app.get('port'))
-    client.messages
-	  .create({
-	    to: '+15143469097',
-	    from: '+13658006707',
-	    body: "Tomorrow's forecast in Financial District, San Francisco is Clear",
-	  })
-	  .then((message) => console.log(message.sid));
-
+	console.log('running on port', app.get('port'))
 })
+
+app.post('/webhook/', function (req, res) {
+    let messaging_events = req.body.entry[0].messaging
+    for (let i = 0; i < messaging_events.length; i++) {
+	    let event = req.body.entry[0].messaging[i]
+	    let sender = event.sender.id
+	    if (event.message && event.message.text) {
+		    let text = event.message.text
+		    if (event.message.quick_reply) {
+            	var status = JSON.stringify(event.message.quick_reply.payload)
+            	text = status
+        	}
+		    if (text === "doorbell") {
+		    	quickReply(sender, "someone's at the door")
+		    	continue
+		    } else if (text === "soon") {
+		    	sendTextMessage(sender, "ok")
+		    	continue
+		    } else if (text === "bye") {
+		    	sendTextMessage(sender, "bye")
+		    	continue
+		    }  else if (text === "away") {
+		    	sendTextMessage(sender, "I will come back later")
+		    	continue
+		    } else {
+		    	sendTextMessage(sender, "say doorbell")
+		    	continue
+		    }
+	    }
+    }
+    res.sendStatus(200)
+})
+
+const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlqtgwka8R4yXMNDFslQIqGW5t4E1ivqqFGCQ5uAWkk5dpIQ1sUju0GV5kQmBTFGM8lA3BeSRHzWFYt6WpWnJVKzS0Vk4EY9A6WmzXhFt52Jma9LytZCeD"
+
+function sendTextMessage(sender, text) {
+    let messageData = { text:text }
+    request({
+	    url: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: {access_token:token},
+	    method: 'POST',
+		json: {
+		    recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+		    console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+		    console.log('Error: ', response.body.error)
+	    }
+    })
+}
+
+function quickReply(sender, text) {
+	let messageData = {
+		"text":text,
+		"quick_replies":[
+			{
+				"content_type":"text",
+				"title":"I'll be there soon",
+				"payload":"soon"
+			},
+			{
+				"content_type":"text",
+				"title":"GTFO",
+				"payload":"bye"
+			},
+			{
+				"content_type":"text",
+				"title":"I'm not home atm",
+				"payload":"away"
+			}
+		]
+	}
+	request({
+	    url: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: {access_token:token},
+	    method: 'POST',
+		json: {
+		    recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+		    console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+		    console.log('Error: ', response.body.error)
+	    }
+    })
+}

@@ -1,13 +1,13 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://admin:admin@ds037195.mlab.com:37195/quizzzes";
 
-function getUsers(name, callback) {
+function getUsers(id, callback) {
 	MongoClient.connect(url, function(err, db) {
 	  if (err) throw err;
 	  var collection = db.collection('users');
 	  collection.findOne(
 	  	{
-	  		'name': name
+	  		'id': id
 	  	}, function(err, result) {
 	  		if (err) {
 	  			console.log("Error");
@@ -22,12 +22,13 @@ function getUsers(name, callback) {
 	});
 }
 
-function insertUser(id, questions) {
+function insertUser(id, name, questions) {
 	MongoClient.connect(url, function(err, db) {
 		if (err) throw err;
 		var collection = db.collection('users');
 		var data = {
-			"name": id,
+			"id": id,
+			"name": name,
 			"questions": questions
 		}
 		

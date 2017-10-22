@@ -38,14 +38,16 @@ app.post('/webhook/', function (req, res) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
-		    let text = event.message.text
+		    var text = event.message.text
 		    if (event.message.quick_reply) {
-            	var status = JSON.stringify(event.message.quick_reply.payload)
-            	text = status
+            	text = JSON.stringify(event.message.quick_reply.payload)
         	}
         	console.log(text)
-		    if (text === "doorbell") {
-		    	quickReply(sender, "someone's at the door")
+		    if (text === "DRAFTQUIZ") {
+		    	sendTextMessage(sender, "What course is this for?")
+		    	while (!event.message || !event.message.text)
+		    	var course = event.message.text
+		    	sendTextMessage(sender, course)
 		    	continue
 		    } else if (text === "soon") {
 		    	sendTextMessage(sender, "ok")
@@ -66,6 +68,8 @@ app.post('/webhook/', function (req, res) {
 })
 
 const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlqtgwka8R4yXMNDFslQIqGW5t4E1ivqqFGCQ5uAWkk5dpIQ1sUju0GV5kQmBTFGM8lA3BeSRHzWFYt6WpWnJVKzS0Vk4EY9A6WmzXhFt52Jma9LytZCeD"
+
+function draftQuiz(sender, text)
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
@@ -93,7 +97,7 @@ function quickReply(sender, text) {
 			{
 				"content_type":"text",
 				"title":"Make cue cards",
-				"payload":"draft"
+				"payload":"DRAFTQUIZ"
 			},
 			{
 				"content_type":"text",

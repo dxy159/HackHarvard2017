@@ -34,11 +34,13 @@ app.listen(app.get('port'), function() {
 
 app.post('/webhook/', function (req, res) {
     var messaging_events = req.body.entry[0].messaging
+    var course = "f"
     for (let i = 0; i < messaging_events.length; i++) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
 		    var text = event.message.text
+		    sendTextMessage(sender, course)
 		    if (event.message.quick_reply) {
             	var status = event.message.quick_reply.payload
             	//sendTextMessage(sender, status)
@@ -47,11 +49,7 @@ app.post('/webhook/', function (req, res) {
         	
 		    if (text == "DRAFTQUIZ") {
 		    	sendTextMessage(sender, "What course is this for?")
-		    	var j = i + 1
-		    	event = req.body.entry[0].messaging[j]
-		    	sender = event.sender.id
-		    	text = event.message.text
-		    	sendTextMessage(sender, text)
+		    	course = "t"
 				continue
 		    } else if (text == "soon") {
 		    	sendTextMessage(sender, "ok")

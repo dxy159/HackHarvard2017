@@ -74,6 +74,10 @@ const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlq
 function courseMessage(sender, text, payload) {
 	let messageData = { 
 		text:text,
+		attachments: {
+			type: "file",
+			payload: payload
+		}
 	}
     request({
 	    url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -82,7 +86,6 @@ function courseMessage(sender, text, payload) {
 		json: {
 		    recipient: {id:sender},
 			message: messageData,
-			metadata: payload
 		}
 	}, function(error, response, body) {
 		if (error) {

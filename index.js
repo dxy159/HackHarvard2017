@@ -73,7 +73,6 @@ const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlq
 
 function courseMessage(sender, text, payload) {
 	let messageData = { 
-		text:text,
 		attachment: {
 			type: "image",
 			payload: {

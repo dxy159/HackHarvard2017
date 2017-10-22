@@ -44,7 +44,7 @@ app.post('/webhook/', function (req, res) {
             	//sendTextMessage(sender, status)
             	text = status
         	}
-        	if (event.message.payload === "COURSEID") {
+        	if (event.payload === "COURSEID") {
         		sendTextMessage(sender, text)
         		continue	
         	} 
@@ -75,8 +75,7 @@ const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlq
 
 function courseMessage(sender, text, payload) {
 	let messageData = { 
-		text:text,
-		payload:payload
+		text:text
 	}
     request({
 	    url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -85,6 +84,7 @@ function courseMessage(sender, text, payload) {
 		json: {
 		    recipient: {id:sender},
 			message: messageData,
+			payload: payload
 		}
 	}, function(error, response, body) {
 		if (error) {

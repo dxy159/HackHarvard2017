@@ -45,16 +45,16 @@ app.post('/webhook/', function (req, res) {
             	text = status
         	}
         	console.log(text)
-		    if (text === "DRAFTQUIZ") {
+		    if (text == "DRAFTQUIZ") {
 		    	sendTextMessage(sender, "What course is this for?")
 		    	continue
-		    } else if (text === "soon") {
+		    } else if (text == "soon") {
 		    	sendTextMessage(sender, "ok")
 		    	continue
-		    } else if (text === "bye") {
+		    } else if (text == "bye") {
 		    	sendTextMessage(sender, "bye")
 		    	continue
-		    }  else if (text === "away") {
+		    }  else if (text == "away") {
 		    	sendTextMessage(sender, "I will come back later")
 		    	continue
 		    } else {

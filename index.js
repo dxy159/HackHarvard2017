@@ -39,6 +39,7 @@ app.post('/webhook/', function (req, res) {
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
 		    var text = event.message.text
+		    sendTextMessage(sender, course)
 		    if (course) {
 		    	sendTextMessage(sender, "course")
 		    	course = false

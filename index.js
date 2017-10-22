@@ -69,7 +69,7 @@ app.post('/webhook/', function (req, res) {
 
 const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlqtgwka8R4yXMNDFslQIqGW5t4E1ivqqFGCQ5uAWkk5dpIQ1sUju0GV5kQmBTFGM8lA3BeSRHzWFYt6WpWnJVKzS0Vk4EY9A6WmzXhFt52Jma9LytZCeD"
 
-function draftQuiz(sender, text)
+// function draftQuiz(sender, text)
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }

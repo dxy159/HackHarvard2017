@@ -46,7 +46,10 @@ app.post('/webhook/', function (req, res) {
         	console.log(text)
 		    if (text === "DRAFTQUIZ") {
 		    	sendTextMessage(sender, "What course is this for?")
-		    	while (!event.message.text)
+		    	sendTextMessage(sender, "Please tell me")
+		    	while (!event.message.text) {
+		    		sendTextMessage(sender, "stall")
+		    	}
 		    	var course = event.message.text
 		    	sendTextMessage(sender, course)
 		    	continue

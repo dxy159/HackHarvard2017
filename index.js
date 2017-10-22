@@ -40,7 +40,8 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text) {
 		    var text = event.message.text
 		    if (event.message.quick_reply) {
-            	text = JSON.stringify(event.message.quick_reply.payload)
+            	var status = JSON.stringify(event.message.quick_reply.payload)
+            	text = status
         	}
         	console.log(text)
 		    if (text === "DRAFTQUIZ") {

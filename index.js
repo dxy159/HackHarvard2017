@@ -34,11 +34,11 @@ app.listen(app.get('port'), function() {
 
 app.post('/webhook/', function (req, res) {
     var messaging_events = req.body.entry[0].messaging
-    var course = "f"
     for (let i = 0; i < messaging_events.length; i++) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
+	    	sendTextMessage(sender, JSON.stringify(event))
 		    var text = event.message.text
 		    sendTextMessage(sender, course)
 		    if (event.message.quick_reply) {
@@ -48,8 +48,7 @@ app.post('/webhook/', function (req, res) {
         	}
         	
 		    if (text == "DRAFTQUIZ") {
-		    	sendTextMessage(sender, "What course is this for?")
-		    	course = "t"
+		    	courseMessage(sender, "What course is this for?", "COURSEID")
 				continue
 		    } else if (text == "soon") {
 		    	sendTextMessage(sender, "ok")
@@ -76,7 +75,6 @@ const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlq
 function courseMessage(sender, text, payload) {
 	let messageData = { 
 		text:text,
-		quick_replies:[]
 	}
     request({
 	    url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -85,6 +83,7 @@ function courseMessage(sender, text, payload) {
 		json: {
 		    recipient: {id:sender},
 			message: messageData,
+			metadata: payload
 		}
 	}, function(error, response, body) {
 		if (error) {

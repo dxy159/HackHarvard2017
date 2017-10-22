@@ -40,7 +40,6 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text) {
 	    	sendTextMessage(sender, JSON.stringify(event))
 		    var text = event.message.text
-		    sendTextMessage(sender, course)
 		    if (event.message.quick_reply) {
             	var status = event.message.quick_reply.payload
             	//sendTextMessage(sender, status)

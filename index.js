@@ -38,12 +38,7 @@ app.post('/webhook/', function (req, res) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
-	    	sendTextMessage(sender, JSON.stringify(event))
 		    var text = event.message.text
-		    if (event.message.quick_reply === []) {
-        		sendTextMessage(sender, text)
-        		continue	
-        	} 
 		    if (event.message.quick_reply) {
             	var status = event.message.quick_reply.payload
             	//sendTextMessage(sender, status)
@@ -51,7 +46,12 @@ app.post('/webhook/', function (req, res) {
         	}
         	
 		    if (text == "DRAFTQUIZ") {
-		    	courseMessage(sender, "What course is this for?", "COURSEID")
+		    	sendTextMessage(sender, "What course is this for?")
+		    	var j = i + 1
+		    	event = req.body.entry[0].messaging[j]
+		    	sender = event.sender.id
+		    	text = event.message.text
+		    	sendTextMessage(sender, text)
 				continue
 		    } else if (text == "soon") {
 		    	sendTextMessage(sender, "ok")

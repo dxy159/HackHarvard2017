@@ -34,7 +34,7 @@ app.listen(app.get('port'), function() {
 
 app.post('/webhook/', function (req, res) {
     var messaging_events = req.body.entry[0].messaging
-    messaging_events.course = false
+    messaging_events.course = "f"
     for (let i = 0; i < messaging_events.length; i++) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
@@ -42,9 +42,9 @@ app.post('/webhook/', function (req, res) {
 		    var text = event.message.text
 		    sendTextMessage(sender, messaging_events.course)
 		    sendTextMessage(sender, "cycle")
-		    if (messaging_events.course) {
+		    if (messaging_events.course === "t") {
 		    	sendTextMessage(sender, "course")
-		    	messaging_events.course = false
+		    	messaging_events.course = "f"
 		    	continue
 		    }
 		    if (event.message.quick_reply) {
@@ -54,7 +54,7 @@ app.post('/webhook/', function (req, res) {
         	console.log(text)
 		    if (text === "DRAFTQUIZ") {
 		    	sendTextMessage(sender, "What course is this for?")
-		    	messaging_events.course = true;
+		    	messaging_events.course = "t"
 		    	continue
 		    } else if (text === "soon") {
 		    	sendTextMessage(sender, "ok")

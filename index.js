@@ -41,13 +41,16 @@ app.post('/webhook/', function (req, res) {
 		    var text = event.message.text
 		    if (event.message.quick_reply) {
             	var status = event.message.quick_reply.payload
-            	sendTextMessage(sender, status)
+            	//sendTextMessage(sender, status)
             	text = status
         	}
-        	console.log(text)
+        	if (event.message.payload === "COURSEID") {
+        		sendTextMessage(sender, text)
+        		continue	
+        	} 
 		    if (text == "DRAFTQUIZ") {
-		    	sendTextMessage(sender, "What course is this for?")
-		    	continue
+		    	courseMessage(sender, "What course is this for?", "COURSEID")
+				continue
 		    } else if (text == "soon") {
 		    	sendTextMessage(sender, "ok")
 		    	continue
@@ -69,6 +72,28 @@ app.post('/webhook/', function (req, res) {
 const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlqtgwka8R4yXMNDFslQIqGW5t4E1ivqqFGCQ5uAWkk5dpIQ1sUju0GV5kQmBTFGM8lA3BeSRHzWFYt6WpWnJVKzS0Vk4EY9A6WmzXhFt52Jma9LytZCeD"
 
 // function draftQuiz(sender, text)
+
+function courseMessage(sender, text, payload) {
+	let messageData = { 
+		text:text,
+		payload:payload
+	}
+    request({
+	    url: 'https://graph.facebook.com/v2.6/me/messages',
+	    qs: {access_token:token},
+	    method: 'POST',
+		json: {
+		    recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+		    console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+		    console.log('Error: ', response.body.error)
+	    }
+    })
+}
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }

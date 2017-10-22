@@ -77,7 +77,7 @@ function courseMessage(sender, text, payload) {
 		attachments: {
 			type: "image",
 			payload: {
-				url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjVzJjlvoPXAhVBeSYKHXATBsEQjRwIBw&url=http%3A%2F%2Fclipart-library.com%2Fpics-of-cartoon-books.html&psig=AOvVaw3puiDSG3FEmg1_ldEzvXt9&ust=1508736282529802"
+				url: "http://clipart-library.com/images/rTnrpnpgc.png"
 			}
 		}
 	}

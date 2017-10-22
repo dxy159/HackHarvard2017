@@ -74,7 +74,7 @@ const token = "EAAB4mW4xXvMBAFgOLpGfqZCcdc9OE8YSn1dGPQQ3OrCWMsQsX1GZAmaU5UHWoGlq
 function courseMessage(sender, text, payload) {
 	let messageData = { 
 		text:text,
-		attachments: {
+		attachment: {
 			type: "image",
 			payload: {
 				url: "http://clipart-library.com/images/rTnrpnpgc.png"

@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+const mongo = require('./mongo.js')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -56,7 +57,7 @@ app.post('/webhook/', function (req, res) {
 		    	sendTextMessage(sender, "I will come back later")
 		    	continue
 		    } else {
-		    	sendTextMessage(sender, sender)
+		    	quickReply(sender, "Hello there. What would you like to do today?")
 		    	continue
 		    }
 	    }
@@ -91,18 +92,18 @@ function quickReply(sender, text) {
 		"quick_replies":[
 			{
 				"content_type":"text",
-				"title":"I'll be there soon",
-				"payload":"soon"
+				"title":"Make cue cards",
+				"payload":"draft"
 			},
 			{
 				"content_type":"text",
-				"title":"GTFO",
-				"payload":"bye"
+				"title":"Quiz!",
+				"payload":"test"
 			},
 			{
 				"content_type":"text",
-				"title":"I'm not home atm",
-				"payload":"away"
+				"title":"I'm ok",
+				"payload":"ignore"
 			}
 		]
 	}
